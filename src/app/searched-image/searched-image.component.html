@@ -1,0 +1,22 @@
+<!-- mat-chip -->
+<mat-chip-list aria-label="Fish selection">
+  <span *ngFor="let text of searchedTexts;index as i">
+    <mat-chip color="accent" selected (click)="fetchImage(text)">{{text}}</mat-chip>
+  </span>
+</mat-chip-list>
+
+<mat-divider></mat-divider>
+<!-- content of searched image // Data from local storage -->
+<div class="wrapper">
+  <p><strong>Fetched Data From Local Storage</strong></p>
+  <div class="row">
+    <div class="card" *ngFor="let item of images;index as i">
+      <img src="{{item.webformatURL}}" alt="error">
+      <div class="container">
+        <h4><b>{{item.user}}</b></h4> 
+        <p>{{item.tags}}</p> 
+      </div>
+    </div>
+  </div>
+</div>
+
